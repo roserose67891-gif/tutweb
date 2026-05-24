@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            justify-content: center;
+            margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        }
+        .logpage{
+            border: 1px solid firebrick;
+        width: 350px;
+            height: 350px;
+            box-sizing: border-box;
+padding: 20px;
+        }
+        .input1{
+            display: flex;
+            flex-direction: column;
+        }
+        .input1 input{
+            width: 270px;
+            height: 25px;
+            margin-left: 20px;
+            margin-top: 5px;
+            border-radius: 2px;
+            border: none;
+            outline-color: yellowgreen;
+        }
+        label{
+            margin-left:20px;
+margin-top: 3px;
+color: aqua;
+font-size: 17px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2,p{
+            text-align: center;
+            color: white;
+        }
+        h2{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        p{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .input1 button{
+
+margin: auto;
+margin-top: 6px;
+padding: 9px 19px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 12px;
+        }
+        .input1 a{
+text-decoration: none;
+
+        }
+      .link a{
+        color: white;
+        margin: 20px;
+        font-size: 15px;
+      }
+      .link .u{
+        margin-left: 50px;
+      }
+      .link{
+        margin-top: 8px;
+      }
+      #overlay{
+        position: fixed;
+        width: 400px;
+        height: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        
+      }
+      .modal{
+position: absolute;
+
+      }
+      .modal h3{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-align: center;
+margin-top: 50px;
+      }
+      .modal a{
+        position:absolute;
+        top: 50%;
+        left: 36%;
+        text-decoration: none;
+        border: 1px solid;
+        padding: 10px;
+        border-radius: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .modal a:hover{
+        background: black;
+        color: white;
+      }
+      .j{
+color: red;
+      }
+      .n{
+        color: black;
+        display: inline;
+        font-size: bold;
+      }
+    </style>
+</head>
+<body>
+    <div class="logpage">
+    <h2>Welcome Back!</h2>
+    <p>Login to Continue</p>
+
+    <div class="input1">
+<label for="">UserName</label>
+<input type="text" required id="em">
+
+
+<label for="">Password</label>
+<input type="email" required id="psw">
+<div class="link">
+<a href="forgotten.html">Forgotten password?</a>
+<a href="account.html" class="u">New User?</a>
+</div>
+<button type="button" onclick="log()">Login</button>
+
+    </div>
+
+    </div>
+
+    <div class="modal" id="overlay" style="background: darkgray;display: none;">
+<div class="homee">
+    <h3 id="gg">LOGIN SUCCESFUL <p id="namee"></p></h3>
+    <a href="go.html" >Order Now</a>
+</div>
+    </div>
+
+</body>
+<script>
+    function log(){
+    
+    let name=document.getElementById("em").value;
+    let password=document.getElementById("psw").value;
+    if(name=="" || password==""){
+        alert("not valid");
+        return;
+    }
+    if(password.length < 5){
+ alert("password too short");
+ return;
+    }
+    let saved=localStorage.getItem("name",name);
+    let savedPassword= localStorage.getItem("password",password);
+
+    if(saved ===""){
+        alert("nul");
+        return;
+    }
+    if(name=== saved && password===savedPassword){
+       // alert("WELCOME BACK "+ name);
+document.getElementById("namee").innerHTML="<div class='j'></div>"+"welcome "+"<div class='n'>"+name+"</div>";
+        document.getElementById("overlay").style.display ="block";
+        
+    }
+    else{
+        alert("Details not match")
+    }
+
+} 
+</script>
+</html>

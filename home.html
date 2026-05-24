@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: black;
+            height: 100vh;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-y: hidden;
+        }
+        .anime{
+            display: inline-flex;
+            gap:20px;
+            margin-top: 10px;
+            
+        }
+        .anime div{
+           animation: bounce 1s infinite ease-in-out;
+        }
+.anime div:first-child{
+background: red;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+animation-delay: 0.6s;
+}
+.anime div:nth-child(2){
+background: green;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+animation-delay: 0.5s;
+}
+
+.anime div:nth-child(3){
+background: yellow;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+animation-delay: 0.3s;
+}
+@keyframes bounce{
+    50%{
+        transform: translateY(-17px);
+    }
+}
+p{
+    color: chartreuse;
+}
+h3{
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <h3>Shop <span>Acessories</span></h3>
+    <div class="anime">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <p>Loading Sites...</p>
+</body>
+<script>
+    setTimeout(function(){
+        window.location.href = "account.html";
+    },9000);
+    </script>
+</html>

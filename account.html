@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      body{
+        background: black;
+        scroll-behavior: smooth;
+      }
+.co{
+    border: 1px solid green;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 8px;
+}
+    </style>
+</head>
+<body>
+<div class="container co col-lg-5">
+  <h2 class="text-center text-white">Create Your Account</h2>
+  <form  class="was-validated">
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input type="text" class="form-control" id="idd" placeholder="Enter Name" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback text-info">Please fill out this field.</div>
+    </div>
+
+     <label for="uname">Email:</label>
+      <input type="text" class="form-control" id="uname " placeholder="Enter Username" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback text-info">Please fill out this field.</div>
+    
+
+    <label for="uname">Last Name:</label>
+      <input type="email" class="form-control" id="uname" placeholder="Enter Email" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback text-info">Please fill out this field.</div>
+<div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwdd" placeholder="Enter password" name="pswd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback text-info">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input type="password" class="form-control" id="pww" placeholder="Confirm Password" name="pswd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback text-info">Please fill out this field.</div>
+    </div>
+<div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback text-info">Check this checkbox to continue.</div>
+      </label>
+    </div>
+      <button type="submit" class="btn btn-primary" onclick="d()">Submit</button>
+    </div>
+  
+    
+    
+    
+    
+  </form>
+</div>
+</body>
+<script>
+function d(){
+ 
+  let name=document.getElementById('idd').value;
+   let password=document.getElementById('pwdd').value;
+   let passwordd=document.getElementById('pww').value;
+   if (password=="" || passwordd==""){
+  alert("invalid password");
+  return;
+ }
+   if(password===passwordd){
+    alert("welcome " +name+ " your password is "+password);
+    localStorage.setItem("name",name);
+localStorage.setItem("password",password);
+
+   }
+   else if(password!==passwordd){
+alert("password not match");
+   }
+
+window.location.href="login.html";
+
+}
+</script>
+</html>
