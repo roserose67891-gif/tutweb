@@ -79,13 +79,19 @@ function d(){
   alert("invalid password");
   return;
  }
+
+    if(password.lenght < 4){
+        alert("password short");
+        return;
+    }
    if(password===passwordd){
     alert("welcome " +name+ " your password is "+password);
+        window.location.href="login.html";
+
     localStorage.setItem("name",name);
 localStorage.setItem("password",password);
 
-       window.location.href="login.html";
-
+      
    }
    else if(password!==passwordd){
 alert("password not match");
