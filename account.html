@@ -75,7 +75,7 @@ function d(){
   let name=document.getElementById('idd').value;
    let password=document.getElementById('pwdd').value;
    let passwordd=document.getElementById('pww').value;
-   if (name="" || password==""){
+   if (password="" || passwordd==""){
   alert("invalid password");
   return;
  }
@@ -89,7 +89,7 @@ function d(){
 alert("password not match");
        return;
  }
-   else{
+if(password==passwordd{
     alert("welcome " +name+ " your password is "+password);
        
     localStorage.setItem("name",name);
@@ -98,10 +98,6 @@ localStorage.setItem("password",password);
       window.location.href="login.html";
    }
   
-   }
-
-
-
 }
 </script>
 </html>
